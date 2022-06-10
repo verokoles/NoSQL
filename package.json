@@ -1,0 +1,20 @@
+{
+  "name": "nosql",
+  "version": "1.0.0",
+  "description": "To build an API for a social network web application <br>\r where users can share their thoughts, <br>\r react to friends’ thoughts, <br>\r and create a friend list.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verokoles/NoSQL.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/verokoles/NoSQL/issues"
+  },
+  "homepage": "https://github.com/verokoles/NoSQL#readme"
+}

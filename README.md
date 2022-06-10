@@ -16,6 +16,10 @@ and create a friend list.
    4. [ Contributing ](#contributing)
 
    ## Walkthrough Video:video_camera:
+Because Insomnia tests the routes with CRUD operations <br>
+the best way to demonstrate is with a video recording showing each path. <br>
+The routes show GET, POST, PUT, and DELETE routes to create, update, <br>
+and delete users, thoughts, and reactions.
 
 
    ## Installation:hammer:
@@ -27,6 +31,9 @@ and create a friend list.
      ```
      ```
      npm i express for routing
+     ```
+     ```
+    install dateFormat.js
      ```
      ```
      run `mongod` to start MONGODB service 
