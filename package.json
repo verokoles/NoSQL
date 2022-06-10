@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/verokoles/NoSQL/issues"
   },
-  "homepage": "https://github.com/verokoles/NoSQL#readme"
+  "homepage": "https://github.com/verokoles/NoSQL#readme",
+  "dependencies": {
+    "mongoose": "^6.3.6"
+  }
 }

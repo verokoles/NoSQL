@@ -36,6 +36,9 @@ and delete users, thoughts, and reactions.
     install dateFormat.js
      ```
      ```
+     npm i mongoose
+     ```
+     ```
      run `mongod` to start MONGODB service 
      ```
      ```
