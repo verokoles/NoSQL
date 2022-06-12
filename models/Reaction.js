@@ -1,22 +1,40 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
+const reactionSchema = new Schema(
+    {
+        reactionId: {
+        // use mongoodes ObjectId data typeof
+        type: Schema.Tyoes.ObjectId,
+        // default: new ObjectId
+        default: () => new Types.ObjectId(),
+        },
+        
+        reactionBody: {
+        type: String,
+        required: true,
+        maxlength: 280 
+        },
 
-reactionId:
-use mongoodes ObjectId data typeof
-default: new ObjectId
+        username: {
+            type: String,
+            required: true
+        }
+      
+        
+        createdAt: {
+            type: Date,
+            // set default value to current timestamp
+            default: Date.now,
+            // use getter method to format th timestamp on query 
+            get: (timestamp) => dateFormat(timestamp),
+            
+        },
+    },
+    { toJSON: {
+        getters: true,
+    },
+id: false,
+}
+;)
 
-reactionBody:
-Stringrequired
-280 character max
-
-username:
-String
-required
-
-createdAt:
-Date
-set default value to current timestamp
-use getter method to format th timestamp on query 
-
-Schema:
-reaction fields subdoc in Thought method
+module.exports = ReactionSchema;

@@ -37,17 +37,17 @@ const userController = {
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.json(err));
   },
-  //create second user
-  createUser2({ body }, res) {
-    User2.create(body)
-      .then((dbUserData) => res.json(dbUserData))
-      .catch((err) => res.json(err));
-  },
-  //create third user
-  createUser3({ body }, res) {
-    User3.create(body)
-      .then((dbUserData) => res.json(dbUserData))
-      .catch((err) => res.json(err));
+//   //create second user
+//   createUser2({ body }, res) {
+//     User2.create(body)
+//       .then((dbUserData) => res.json(dbUserData))
+//       .catch((err) => res.json(err));
+//   },
+//   //create third user
+//   createUser3({ body }, res) {
+//     User3.create(body)
+//       .then((dbUserData) => res.json(dbUserData))
+//       .catch((err) => res.json(err));
   },
 
   // update user by id

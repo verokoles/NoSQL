@@ -1,24 +1,64 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
+const UserSchema: new Schema(
+    {
+    username: {
+        // String
+        // Unique
+        // Required
+        // Trimmed
+        type: String,
+        unique: true,
+        required: "Username is required!",
+        trim: true
+    },
+ 
+    
+    email: {
 
-username
-String
-Unique
-Required
-Trimmed
+        // String
+        // Required
+        // Unique
+        // Must match a valid email address (look into Mongoose's matching validation)
+        type: String,
+        required: true,
+        unique: true,
+        required: "Email is required!",
+        match: [/.+@.+\..+/],
+    },
+   
+    thoughts: [
+        {
+        // Array of _id values referencing the Thought model
+        type: Schema.Types.ObjectId,
+        ref: "Thought",
+    },
+],
 
-email
-String
-Required
-Unique
-Must match a valid email address (look into Mongoose's matching validation)
+    
+    friends: [
+        {
+        // Array of _id values referencing the User model (self-reference)
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    },
+],
+},
+{
+    toJSON: {
+        virtuals: true,
 
-thoughts
-Array of _id values referencing the Thought model
+    },
+    id:false,
+}
+);
 
-friends
-Array of _id values referencing the User model (self-reference)
+   // Schema Settings
+    // Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
+UserSchema.virtual("freindCount").get(function () {
+    return this.friends.length;
+});
+    const User = model("User", UserSchema);
 
-Schema Settings
-Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
+module.exports = User;
