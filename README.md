@@ -16,8 +16,8 @@ and create a friend list.
    4. [ Contributing ](#contributing)
 
    ## Walkthrough Video:video_camera:
-   [NoSQL Video](https://drive.google.com/file/d/10jHf5_Z2dN7QQObQVTR42KjV3P5-wzHD/view)
-   
+   [Click Here](https://drive.google.com/file/d/10jHf5_Z2dN7QQObQVTR42KjV3P5-wzHD/view)
+
 Because Insomnia tests the routes with CRUD operations <br>
 the best way to demonstrate is with a video recording showing each path. <br>
 The routes show GET, POST, PUT, and DELETE routes to create, update, <br>
