@@ -10,7 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(require("./routes"));
 
 mongoose.connect(process.env.MONGODB_URI || 
-  'mongodb+srv://verkoles:<Veronichka88$$>@clusterv.sl7m0.mongodb.net/?retryWrites=true&w=majority', {
+  "mongodb+srv://verkoles:<Veronichka88$$>@clusterv.sl7m0.mongodb.net/?retryWrites=true&w=majority", 
+  {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
