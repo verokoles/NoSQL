@@ -1,15 +1,15 @@
 const { Schema, model, Types} = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const { Query } = require("mongoose");
-const { type } = require('express/lib/response');
+// const { Query } = require("mongoose");
+const ReactionSchema = require("./Reaction");
 
 const ThoughtSchema = new Schema(
     {
 
 thoughtText: {
    type: String,
-   required: true,
+   required: "a thought is required!",
    maxlength: 128,
    minlength: 1
 },
@@ -29,9 +29,7 @@ username: {
 
 },
 
-
-reactions:
-    [ReactionSchema],
+reactions: [ReactionSchema],
     // array of nested docs created swith reactionSchema
 },
 {
@@ -44,10 +42,11 @@ reactions:
 );
 // schema:
 // create virtual called reactionCount that retreives the length 
-ThoughtSchema.virtual("reactionCount").get(fucntion() {
+ThoughtSchema.virtual("reactionCount").get(function() {
     return this.reactions.length;
 });
 // of th thoughts reactions arrayfield on Query
+
 const Thought = model("Thought", ThoughtSchema);
 
 module.exports = Thought;

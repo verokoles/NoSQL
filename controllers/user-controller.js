@@ -48,7 +48,6 @@ const userController = {
 //     User3.create(body)
 //       .then((dbUserData) => res.json(dbUserData))
 //       .catch((err) => res.json(err));
-  },
 
   // update user by id
   updateUser({ params, body }, res) {
@@ -85,10 +84,10 @@ const userController = {
   },
 
   // add a friend
-  addFriend({ params, body }, res) {
+  addFriend({ params}, res) {
     User.findOneAndUpdate(
       { _id: params.userId },
-      { $pull: { friends: params.friendId } },
+      { $addToSet: { friends: params.friendId } },
       { new: true, runValidators: true }
     )
       .then((dbUserData) => {

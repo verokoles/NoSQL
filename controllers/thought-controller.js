@@ -18,7 +18,7 @@ const thoughtController = {
   },
 
   // get thought by id
-  this.getThoughtById({ params }, res) {
+  getThoughtById({ params }, res) {
     Thought.findOne({ _id: params.id })
       .populate({
         path: 'users',
@@ -39,7 +39,7 @@ createThought({ body }, res) {
 },
 
   //update thought
-  this.updateThought({ params, body }, res) {
+  updateThought({ params, body }, res) {
     Thought.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
       .then(dbThoughtData => {
         if (!dbThoughtData) {
